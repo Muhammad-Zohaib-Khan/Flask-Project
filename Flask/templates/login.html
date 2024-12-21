@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login </title>
+    <style> 
+    body{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        height:100vh;
+    }
+    form{
+        background-color: #15172b;
+        border-radius:20px;
+        height:500px;
+        width:320px;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+    .title{
+        margin-top:10px;
+        color:#eee;
+        font-family: sans-serif;
+        font-weight: 600;
+        font-size: 36px;
+    }
+    .subtitle{
+        margin-top: 10px;
+        font-size: 16px;
+        font-family: sans-serif;
+        font-weight: 600;
+        color:#eee
+    }
+    .input{
+        background-color: #303245;
+        border-radius: 12px;
+        border: 0;
+        box-sizing: border-box;
+        color:#eee;
+        height: 100%;
+        font-size:18px;
+        outline: 0;
+        padding: 4px 20px 0;
+        width: 100%;
+    }
+    .submit{
+        background-color: #08d;
+        border-radius: 12px;
+        box-sizing: border-box;
+        border:0;
+        color:#eee;
+        cursor:pointer;
+        font-size: 18px;
+        height: 50px;
+        margin-top: 38px;
+        text-align: center;
+        width: 100%;
+    }
+    .submit:active{
+        background-color: rgb(0, 187, 153);
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/login" method="POST">
+            <div class="title">Welcome</div>
+            <div class="subtitle">Login to your account!</div>
+
+            <div class="container_email">
+                <input id="email" class="input" type="email" name="email" placeholder="" required>
+                <div class="cut"></div>
+                <label for="email" class="placeholder">Email:</label>
+            </div>
+
+            <div class="container_password">
+                <input id="password" class="input" type="password" name="password" placeholder="" required>
+                <div class="cut cut-short"></div>s
+                <label for="password" class="placeholder">Password:</label>
+            </div>
+
+            <button class="submit">Login</button><br>
+            <a href="{{url_for('register')}}"> Don't have an account? Register</a>
+        </form>
+    </div>
+    <script>
+       let design=window.document.getElementsByTagName("input")
+       let field=window.document.getElementsByTagName("label")
+       for (let i=0;i<design.length;i++){
+
+       design[i].addEventListener("mouseenter",()=>{
+            field[i].style.color="white";
+        })
+       design[i].addEventListener("mouseleave",()=>{
+            field[i].style.color="black";
+        })
+
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="user">
+            <h1>
+                {% if session['name'] %}
+                Welcome {{ session['name'] }}!!
+                {% else %}
+                Feel at Home you are wecome any time
+                {% endif %}
+            </h1>
+        </div>
+
+        <div class="content">
+            <h2>Here is your meme will
+              refreshes in sec</h2>
+              <img class="meme-img" src="{{data.preview}}">
+              <p>Current subreddit: {{data.subreddit}}</p>
+        </div>
+    </div>
+</body>
+</html>
