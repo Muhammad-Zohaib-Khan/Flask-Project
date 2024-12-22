@@ -5,7 +5,7 @@ try:
     config={
         "user":"root",
         "host":"localhost",
-        "password":"979809908979zk",
+        "password":"97",
         "port":"3306"
     }
     connection=mysql.connector.connect(**config)
